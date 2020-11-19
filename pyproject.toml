@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "potatocore_bootloader"
+version = "0.1.0"
+description = ""
+authors = ["Josh Koike <jk@tilting.me>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+nmigen = {git = "git://github.com/nmigen/nmigen"}
+nmigen_boards = {git = "git://github.com/nmigen/nmigen-boards"}
+nmigen-yosys = "^0.9.post3527.dev26"
+yowasp-nextpnr-ecp5 = "^0.0.post2683.dev25"
+yowasp-nextpnr-ecp5-all = "^0.0.post2683.dev25"
+luna = {path = "../../luna"}
+nmigen_soc = {git="https://github.com/nmigen/nmigen-soc"}
+pyserial = "*"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.6.0"
+
+[tool.poetry.scripts]
+build = "potatocore_bootloader.top:build"
+spi_test = "potatocore_bootloader.spi:build"
+spi_frontend = "potatocore_bootloader.spi:frontend"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
